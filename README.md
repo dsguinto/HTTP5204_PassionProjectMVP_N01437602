@@ -1,4 +1,4 @@
-# HTTP5204_PassionProjectMVP_N01437602
+# HTTP5204 PassionProject MVP
 **This is the initial MVP for my HTTP5204 Passion Project: Up-Next Store**
 
 
