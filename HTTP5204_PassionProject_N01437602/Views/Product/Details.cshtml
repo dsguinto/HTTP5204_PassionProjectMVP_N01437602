@@ -1,0 +1,101 @@
+﻿@model HTTP5204_PassionProject_N01437602.Models.ShowProduct
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@Model.product.ProductName</h2>
+
+<div>
+    <hr />
+    <div class="productDetailsView">
+        <div class="viewContainer">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.product.ProductName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.product.ProductName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.product.ProductDesc)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.product.ProductDesc)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.product.ProductCondition)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.product.ProductCondition)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.product.ProductGender)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.product.ProductGender)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.product.ProductColour)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.product.ProductColour)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.product.ProductType)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.product.ProductType)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.product.ProductSize)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.product.ProductSize)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.product.ProductPrice)
+                </dt>
+
+                <dd>
+                    $@Html.DisplayFor(model => model.product.ProductPrice)
+                </dd>
+
+            </dl>
+        </div>
+        <div class="viewContainer">
+            @{
+                string pic = "/Content/Products/default-Product-icon.jpg";
+                string alt = "No Product Picture Provided";
+                if (Model.product.ProductHasPic)
+                {
+                    pic = "/Content/Products/" + Model.product.ProductID + "." + Model.product.ProductPicExtension;
+                    alt = "Product image of " + Model.product.ProductName;
+                }
+            }
+
+            <div class="imgContainer">
+                <h4>Sold By:  @Html.ActionLink(Model.user.UserName, "Details", "User", new { id = Model.user.UserID }, new { })</h4>
+                <img src="@pic" alt="@alt" />
+                @Html.ActionLink("Delete Product", "DeleteConfirm", new { id = Model.product.ProductID })
+            </div>
+        </div>
+    </div>
+</div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.product.ProductID }) |
+        @Html.ActionLink("Back to Product Listings", "List")
+    </p>

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<HTTP5204_PassionProject_N01437602.Models.ProductDto>
+
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>Product Listings (Admin & Seller Access)</h2>
+<h4> - Users will only be able to view products and add them to an order - </br> - Users will only have access to editing their own products - </br> - Admin will have access to all products -</h4>
+
+<p>
+    @Html.ActionLink("Add New Product", "Create")
+</p>
+
+<div class="productsContainer">
+
+    @foreach (var product in Model)
+    {
+        <div class="product">
+            <div class="_product">
+                <div class="productTitle">
+                    @Html.ActionLink(product.ProductName, "Details", new { id = product.ProductID})
+                </div>
+                @{
+                    string pic = "/Content/Products/default-product-icon.jpg";
+                    string alt = "No Product Image Provided";
+
+                    if (product.ProductHasPic)
+                    {
+                        pic = "/Content/Products" + product.ProductID + "." + product.ProductPicExtension;
+                        alt = "Image of a " + product.ProductName;
+                    }
+                }
+                <div class="imgContainer">
+                    <img src="@pic" alt="@alt" />
+                </div>
+                <div class="underImg">
+                    <p>$@product.ProductPrice</p>
+                    <nav class="linkNav">
+                        <span class="editDelLink">@Html.ActionLink("Edit", "Edit", new { id = product.ProductID }) | @Html.ActionLink("Delete", "DeleteConfirm", new { id = product.ProductID })</span>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    }
+</div>

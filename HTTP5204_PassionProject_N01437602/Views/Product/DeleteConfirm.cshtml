@@ -1,0 +1,87 @@
+﻿@model HTTP5204_PassionProject_N01437602.Models.ProductDto
+
+@{
+    ViewBag.Title = "DeleteConfirm";
+}
+
+<h2>Are you sure you want to delete @Model.ProductName?</h2>
+
+<h3 class="warning">Warning: This action cannot be reversed.</h3>
+@Html.ActionLink("Cancel", "List")
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductCondition)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductCondition)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductGender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductGender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductColour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductColour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductSize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductSize)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm("Delete", "Product", new { id = Model.ProductID }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" />
+        </div>
+    }
+</div>

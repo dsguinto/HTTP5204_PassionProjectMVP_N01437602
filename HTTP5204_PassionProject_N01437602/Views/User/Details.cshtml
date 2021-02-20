@@ -1,0 +1,87 @@
+﻿@model HTTP5204_PassionProject_N01437602.Models.ShowUser
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Full Name: @Model.user.UserFirstName @Model.user.UserLastName</h2>
+<h3>Username: @Model.user.UserName</h3>
+<hr />
+
+<div class="viewContainer">
+    @{
+        string pic = "/Content/Users/default-user-icon.jpg";
+        string alt = "No Profile Picture Provided";
+        if (Model.user.UserHasPic)
+        {
+            pic = "/Content/Users/" + Model.user.UserID + "." + Model.user.UserPicExtension;
+            alt = "User image of " + Model.user.UserName;
+        }
+    }
+
+    <div class="imgContainer">
+        <img src="@pic" alt="@alt" />
+    </div>
+
+    <div class="detailContainer">
+        <h4>User Information</h4>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.user.UserFirstName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.user.UserFirstName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.user.UserLastName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.user.UserLastName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.user.UserName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.user.UserName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.user.UserLocation)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.user.UserLocation)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.user.UserBio)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.user.UserBio)
+            </dd>
+        </dl>
+    </div>
+
+    <div class="detailContainer">
+        <h4>Products</h4>
+        <div class="dl-horizontal">
+            @foreach (var product in Model.userproducts)
+            {
+                <div>
+                    @Html.ActionLink(product.ProductName, "Details", "Product", new { id = product.ProductID }, new { })
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.user.UserID }) |
+        @Html.ActionLink("Back to User List", "List")
+    </p>

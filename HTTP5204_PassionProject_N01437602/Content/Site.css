@@ -1,0 +1,202 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+
+/* Navigation Bar Styling*/
+.navbar-inverse {
+    background-color: white;
+    color: black;
+    font-family: 'Abel', sans-serif;
+}
+
+ .navbar-inverse .navbar-nav > li > a {
+     color: black;
+     font-weight: bold;
+     transition: 0.3s;
+ }
+
+ .navbar-inverse .navbar-nav > li > a:hover {
+     color: grey;
+ }
+
+.navbar-inverse .navbar-brand {
+    color: black;
+    font-family: 'Permanent Marker', cursive;
+    transition: 0.3s;
+}
+
+.navbar-inverse .navbar-brand:hover {
+    color: grey;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Abel', sans-serif;
+    font-weight: bold;
+    padding: 50px 5% 20px 5%;
+}
+
+h1 {
+    font-family: 'Permanent Marker', cursive;
+    text-align: center;
+}
+
+.jumbotron{
+    margin: 0 auto;
+    background-color: lightgray;
+}
+    .jumbotron p {
+        text-align: center;
+        margin: 0 7em 15px 7em;
+        border-bottom: 1px solid black;
+    }
+
+.mainBody {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    background-image: url("/Content/Images/up-next-banner.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 0;
+    opacity: 0.6;
+    padding: 27%;
+}
+
+.mainBody__btn a {
+    padding: 0.5em 1em;
+    margin: 1em;
+    background-color: lightgray;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: 0.3s;
+    border-radius: 25px;
+}
+
+.mainBody__btn h2 {
+    margin: 1em;
+}
+
+.mainBody__btn a:hover {
+    text-decoration: none;
+    color: white;
+    background-color: slategray;
+    text-decoration: none;
+}
+
+
+/*List View Styling*/
+
+th{
+    font-size: 1.25em;
+    text-decoration: underline;
+}
+
+.productsContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.product {
+    padding: 2em;
+}
+
+.productTitle{
+    text-align: center;
+}
+
+.underImg{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+/* Add/Edit Styling*/
+
+.imgContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.imgContainer img {
+    width: 200px;
+    height: auto;
+}
+
+.btn btn-default{
+    background-color: lightsteelblue;
+}
+
+.editContainer {
+    display: flex;
+    flex-direction: row;
+}
+/* Detail Page Styling*/
+.viewContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 2em;
+    width: 75%;
+    justify-content: center;
+}
+
+.viewContainer h4{
+    text-align: center;
+}
+
+.detailContainer {
+    padding: 0 8%;
+}
+
+.productDetailsView{
+    display: flex;
+    flex-direction: row;
+
+}
+
+/* Delete Views Styling*/
+
+.warning{
+    color: red;
+}
+
+.form-actions{
+    text-align: center;
+}
+
+.btn-default {
+    transition: 0.3s;
+}
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* Footer Styling*/
+
+footer, .container body-content {
+    bottom: 0;
+    width: 80%;
+}
