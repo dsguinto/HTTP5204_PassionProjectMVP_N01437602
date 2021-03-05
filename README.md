@@ -33,7 +33,7 @@ Other additional features that I hope to add to my project in the future are lis
 
 Thank you for taking a look at my passion project!
 
-###References
+### References
 * [Christine Bittle's Varsity MVP example](https://github.com/christinebittle/varsity_mvp)
 * [How to add a search feature](https://www.youtube.com/watch?v=Slw-gs2vcWo&ab_channel=kudvenkat)
 * [Generated Photos](https://generated.photos/)
