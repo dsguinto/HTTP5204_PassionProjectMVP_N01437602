@@ -6,6 +6,7 @@ For my passion project, my goal was to create an ecommerce website called "Up-Ne
 I was able to complete the administrative side of the website, which allows a user with an admin account to be able to view the entire user and product database. The admin is able to view, add, edit, and delete users/products to the website. 
 
 ### Features Included
+* CRUD
 * Search
 * Image Uploading
 * HTML/CSS Styling (Responsiveness)
