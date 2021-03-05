@@ -12,7 +12,7 @@
         <div class="viewContainer">
             <dl class="dl-horizontal">
                 <dt>
-                    @Html.DisplayNameFor(model => model.product.ProductName)
+                    @Html.DisplayNameFor(model => model.product.ProductName):
                 </dt>
 
                 <dd>
@@ -20,7 +20,7 @@
                 </dd>
 
                 <dt>
-                    @Html.DisplayNameFor(model => model.product.ProductDesc)
+                    @Html.DisplayNameFor(model => model.product.ProductDesc):
                 </dt>
 
                 <dd>
@@ -28,7 +28,7 @@
                 </dd>
 
                 <dt>
-                    @Html.DisplayNameFor(model => model.product.ProductCondition)
+                    @Html.DisplayNameFor(model => model.product.ProductCondition):
                 </dt>
 
                 <dd>
@@ -36,7 +36,7 @@
                 </dd>
 
                 <dt>
-                    @Html.DisplayNameFor(model => model.product.ProductGender)
+                    @Html.DisplayNameFor(model => model.product.ProductGender):
                 </dt>
 
                 <dd>
@@ -44,7 +44,7 @@
                 </dd>
 
                 <dt>
-                    @Html.DisplayNameFor(model => model.product.ProductColour)
+                    @Html.DisplayNameFor(model => model.product.ProductColour):
                 </dt>
 
                 <dd>
@@ -52,7 +52,7 @@
                 </dd>
 
                 <dt>
-                    @Html.DisplayNameFor(model => model.product.ProductType)
+                    @Html.DisplayNameFor(model => model.product.ProductType):
                 </dt>
 
                 <dd>
@@ -60,14 +60,14 @@
                 </dd>
 
                 <dt>
-                    @Html.DisplayNameFor(model => model.product.ProductSize)
+                    @Html.DisplayNameFor(model => model.product.ProductSize):
                 </dt>
 
                 <dd>
                     @Html.DisplayFor(model => model.product.ProductSize)
                 </dd>
                 <dt>
-                    @Html.DisplayNameFor(model => model.product.ProductPrice)
+                    @Html.DisplayNameFor(model => model.product.ProductPrice):
                 </dt>
 
                 <dd>
@@ -88,7 +88,7 @@
             }
 
             <div class="imgContainer">
-                <h4>Sold By:  @Html.ActionLink(Model.user.UserName, "Details", "User", new { id = Model.user.UserID }, new { })</h4>
+                <h4>Owned By:  @Html.ActionLink(Model.user.UserName, "Details", "User", new { id = Model.user.UserID }, new { })</h4>
                 <img src="@pic" alt="@alt" />
                 @Html.ActionLink("Delete Product", "DeleteConfirm", new { id = Model.product.ProductID })
             </div>

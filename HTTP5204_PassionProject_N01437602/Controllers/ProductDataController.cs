@@ -156,6 +156,9 @@ namespace HTTP5204_PassionProject_N01437602.Controllers
             }
 
             db.Entry(product).State = EntityState.Modified;
+            db.Entry(product).Property(p => p.ProductHasPic).IsModified = false;
+            db.Entry(product).Property(p => p.ProductPicExtension).IsModified = false;
+
 
             try
             {
@@ -177,7 +180,7 @@ namespace HTTP5204_PassionProject_N01437602.Controllers
         }
 
         /// <summary>
-        /// Gets product picture data, uplaods it to the webserver and udpates product HasPic option
+        /// Gets product picture data, uplaods it to the webserver and updates product HasPic option
         /// </summary>
         /// <param name="id">Product ID</param>
         /// <returns>status code 200 if successful, 400 if not</returns>

@@ -17,6 +17,7 @@ namespace HTTP5204_PassionProject_N01437602.Controllers
 
         private JavaScriptSerializer jss = new JavaScriptSerializer();
         private static readonly HttpClient client;
+        private StoreDbContext db = new StoreDbContext();
 
         static UserController()
         {
@@ -33,7 +34,7 @@ namespace HTTP5204_PassionProject_N01437602.Controllers
 
 
         // GET: User/List
-        public ActionResult List()
+        public ActionResult List(string search)
         {
             string url = "userdata/getusers";
             HttpResponseMessage response = client.GetAsync(url).Result;
@@ -41,7 +42,10 @@ namespace HTTP5204_PassionProject_N01437602.Controllers
             if (response.IsSuccessStatusCode)
             {
                 IEnumerable<UserDto> SelectedUser = response.Content.ReadAsAsync<IEnumerable<UserDto>>().Result;
-                return View(SelectedUser);
+                return View(search == null ? SelectedUser :
+                    SelectedUser.Where(x => x.UserFirstName.IndexOf(search, StringComparison.OrdinalIgnoreCase) >=0 
+                    || x.UserLastName.IndexOf(search, StringComparison.OrdinalIgnoreCase) >= 0 
+                    || x.UserName.IndexOf(search, StringComparison.OrdinalIgnoreCase) >= 0).ToList());
             }
             else
             {
@@ -49,7 +53,6 @@ namespace HTTP5204_PassionProject_N01437602.Controllers
             }
         }
 
-        
         // GET: User/Details/5
         public ActionResult Details(int id)
         {
@@ -210,6 +213,8 @@ namespace HTTP5204_PassionProject_N01437602.Controllers
                 return RedirectToAction("Error");
             }
         }
+
+
 
         public ActionResult Error()
         {

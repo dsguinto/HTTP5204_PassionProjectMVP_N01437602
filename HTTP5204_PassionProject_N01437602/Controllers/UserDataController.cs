@@ -145,6 +145,8 @@ namespace HTTP5204_PassionProject_N01437602.Controllers
             }
 
             db.Entry(user).State = EntityState.Modified;
+            db.Entry(user).Property(u => u.UserHasPic).IsModified = false;
+            db.Entry(user).Property(u => u.UserPicExtension).IsModified = false;
 
             try
             {

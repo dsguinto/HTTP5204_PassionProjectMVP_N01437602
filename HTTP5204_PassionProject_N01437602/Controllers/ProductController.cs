@@ -32,7 +32,7 @@ namespace HTTP5204_PassionProject_N01437602.Controllers
         }
 
         // GET: Product/List
-        public ActionResult List()
+        public ActionResult List(string search)
         {
             string url = "productdata/getproducts";
             HttpResponseMessage response = client.GetAsync(url).Result;
@@ -40,7 +40,8 @@ namespace HTTP5204_PassionProject_N01437602.Controllers
             if (response.IsSuccessStatusCode)
             {
                 IEnumerable<ProductDto> SelectedProduct = response.Content.ReadAsAsync<IEnumerable<ProductDto>>().Result;
-                return View(SelectedProduct);
+                return View(search == null ? SelectedProduct :
+                    SelectedProduct.Where(x => x.ProductName.IndexOf(search, StringComparison.OrdinalIgnoreCase) >= 0).ToList());
             }
             else
             {

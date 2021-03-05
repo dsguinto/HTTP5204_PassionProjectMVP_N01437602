@@ -27,7 +27,7 @@
         <h4>User Information</h4>
         <dl class="dl-horizontal">
             <dt>
-                @Html.DisplayNameFor(model => model.user.UserFirstName)
+                @Html.DisplayNameFor(model => model.user.UserFirstName):
             </dt>
 
             <dd>
@@ -35,7 +35,7 @@
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => model.user.UserLastName)
+                @Html.DisplayNameFor(model => model.user.UserLastName):
             </dt>
 
             <dd>
@@ -43,7 +43,7 @@
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => model.user.UserName)
+                @Html.DisplayNameFor(model => model.user.UserName):
             </dt>
 
             <dd>
@@ -51,7 +51,7 @@
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => model.user.UserLocation)
+                @Html.DisplayNameFor(model => model.user.UserLocation):
             </dt>
 
             <dd>
@@ -59,7 +59,7 @@
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => model.user.UserBio)
+                @Html.DisplayNameFor(model => model.user.UserBio):
             </dt>
 
             <dd>
@@ -69,7 +69,7 @@
     </div>
 
     <div class="detailContainer">
-        <h4>Products</h4>
+        <h4>Products Owned</h4>
         <div class="dl-horizontal">
             @foreach (var product in Model.userproducts)
             {
